@@ -41,6 +41,7 @@ const click = async () => {
 
 const connect = async () => {
     const wallet = await window.martian.connect();
+    console.log("Wallet Connected");
 }
 
 const disconnect = async () => {
