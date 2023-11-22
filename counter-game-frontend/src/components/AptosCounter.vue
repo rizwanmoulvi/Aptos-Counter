@@ -102,10 +102,10 @@ onBeforeMount(async () => {
 }
 
 .circular-button {
-    width: 100px; /* Adjust as needed */
-    height: 100px; /* Adjust as needed */
-    border-radius: 50%; /* Makes the button circular */
-    font-size: 1.5em; /* Adjust as needed */
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    font-size: 1.5em; 
     display: flex;
     align-items: center;
     justify-content: center;
