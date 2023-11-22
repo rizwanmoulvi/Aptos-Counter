@@ -1,8 +1,8 @@
 <script async setup lang="ts">
-//sender: 0x0d8b6d8c4df87920b444d398be06deb8226aba9dc3f0176e32ef6217a5094686
+
 import { AptosClient } from "aptos"; 
 import { ref, onBeforeMount } from "vue";
-const moveModule = "0xf62391f707fbd748accc3d981ad37133242609c24f2f61e8e220c91bf22c7c19";
+const moveModule = "0xf2168be2cd7fe303b6acf9c1f1039c0bcdedc8c94587db584667d7a8f344c3de";
 const client = new AptosClient("https://fullnode.devnet.aptoslabs.com/v1");
 
 const count = ref(0);
@@ -60,11 +60,54 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-    <div>
-        <button @click="connect()">Connect Wallet</button>
-        <button @click="disconnect()">Disconnect Wallet</button>
-        <p>Your Count: {{ count }}</p>
-        <button @click="click()">Click</button>
-        <p>Global Count: {{ gcount }}</p>
+    <div class="counter-container">
+        <h1 class="counter-text" style="font-size: 3em;">Counter Game</h1>
+        <button class="counter-button" @click="connect()">Connect Wallet</button>
+        <button class="counter-button" @click="disconnect()">Disconnect Wallet</button>
+        <button class="counter-button circular-button" @click="click()">Click</button>
+        <p class="counter-text">Your Clicks: {{ count }}</p>
+        <p class="counter-text">Global Clicks: {{ gcount }}</p>
     </div>
 </template>
+
+<style scoped>
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.counter-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #f00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.counter-button:hover {
+    background-color: #d00;
+}
+
+.counter-text {
+    color: #f00;
+    font-size: 2em;
+    font-family: 'Digital-7 Mono', sans-serif;
+}
+
+.circular-button {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the button circular */
+    font-size: 1.5em; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
