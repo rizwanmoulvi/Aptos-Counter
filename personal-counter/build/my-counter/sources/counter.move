@@ -1,4 +1,6 @@
-module publisher::counter{
+
+
+module contract::counter{
     use std::signer;
 
     struct CountHolder has key {
